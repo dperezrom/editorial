@@ -60,7 +60,7 @@ class MonografiaController extends Controller
     {
         return view('monografias.show', [
             'monografia' => $monografia->with('articulos')->withSum('articulos', 'num_paginas')->find($monografia->id),
-    
+
         ]);
     }
 
@@ -107,5 +107,14 @@ class MonografiaController extends Controller
             return redirect()->route('monografias.index')->with('success', 'Monografia borrada con exito');
         }
         return redirect()->route('monografias.index')->with('error', 'Esta monografia tiene articulos asociados.');
+    }
+
+
+
+
+    public function autores(Monografia $monografia){
+        return view('monografias.autores', [
+            'monografia' => $monografia,
+        ]);
     }
 }
