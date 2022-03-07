@@ -34,25 +34,25 @@
                                         <td class="px-6 py-2">{{ $monografia->titulo }}</td>
                                         <td class="px-6 py-2">{{ $monografia->anyo }}</td>
                                         <td class="px-6 py-4">
-                                           <a href="{{ route('monografias.edit', $monografia) }}" class="mt-4 text-blue-900 hover:underline">Editar</a>
+                                           <a href="{{ route('monografias.edit', $monografia) }}" class="px-4 py-1 text-sm text-white bg-yellow-400 rounded">Editar</a>
                                         </td>
                                         <td>
                                             <div class="text-sm text-gray-900 ">
                                                 <form action="{{ route('monografias.destroy', $monografia) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Borrar</button>
+                                                    <button type="submit" class="px-4 py-1 text-sm text-white bg-red-600 rounded">Borrar</button>
                                                 </form>
                                             </div>
                                         </td>
                                         <td>
-                                            <a href="{{ route('monografias.show', $monografia) }}" class="mt-4 text-blue-900 hover:underline">Mostrar</a>
+                                            <a href="{{ route('monografias.show', $monografia) }}" class="px-4 py-1 text-sm text-white bg-green-300 rounded">Mostrar</a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        <a href="/monografias/create" class="mt-4 text-blue-900 hover:underline">Insertar una nueva monografia</a>
+                        <a href="/monografias/create" class="px-4 py-1 text-sm text-white bg-blue-400 rounded">Insertar una nueva monografia</a>
                     </x-monografias>
                 </div>
             </div>
