@@ -58,7 +58,10 @@ class MonografiaController extends Controller
      */
     public function show(Monografia $monografia)
     {
-        //
+        return view('monografias.show', [
+            'monografia' => $monografia->with('articulos')->withSum('articulos', 'num_paginas')->find($monografia->id),
+    
+        ]);
     }
 
     /**

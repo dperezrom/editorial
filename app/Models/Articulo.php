@@ -11,11 +11,11 @@ class Articulo extends Model
 
     public function monografias()
     {
-        return $this->belongsToMany(Monografia::class);
+        return $this->belongsToMany(Monografia::class, 'articulo_monografias');
     }
 
     public function autores()
     {
-        return $this->belongsToMany(Autor::class);
+        return $this->belongsToMany(Autor::class, 'articulo_autores');
     }
 }
